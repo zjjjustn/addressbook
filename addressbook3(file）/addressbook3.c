@@ -33,11 +33,6 @@ typedef struct Contact
 	int capacity;//当前通讯录的容量
 }Contact;
 
-
-#define _CRT_SECURE_NO_WARNINGS 1
-
-#include"contact.h"
-
 //初始化通讯录
 void InitContact(Contact* pc)
 {
