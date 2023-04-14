@@ -6,7 +6,6 @@
 #include<stdlib.h>
 #include<errno.h>
 
-//定义结构体类型
 #define NAME_MAX 20
 #define SEX_MAX 10
 #define TELE_MAX 12
@@ -15,7 +14,7 @@
 #define DEFAULT_SZ 3
 #define INCREASE_SZ 2
 
-//创建通讯录
+
 typedef struct PeoInfo
 {
 	char name[NAME_MAX];
@@ -25,12 +24,12 @@ typedef struct PeoInfo
 	char addr[ADDR_MAX];
 }PeoInfo;
 
-//动态版本
+
 typedef struct Contact
 {
-	PeoInfo* data;//存放人的信息，维护通讯录的指针
-	int sz;//记录通讯录中实际联系人的个数
-	int capacity;//当前通讯录的容量
+	PeoInfo* data;
+	int sz;
+	int capacity;
 }Contact;
 
 //初始化通讯录
@@ -266,7 +265,7 @@ void SaveContact(Contact* pc)
 		perror("SaveContact");
 		return;
 	}
-	//以二进制的形式写入文件
+
 	int i = 0;
 	for (i = 0; i < pc->sz; i++)
 	{
